@@ -2,7 +2,7 @@
 setlocal
 echo ===========================================================================
 echo Pushing Aurora Academic Platform to GitHub
-echo Repository: https://github.com/shahjaineel850-lgtm/aurora-academic-platform
+echo Repository: https://github.com/shahjaineel850-lgtm/IntelliCampus2.0
 echo ===========================================================================
 
 REM Add Git and GitHub CLI to PATH for this session
@@ -29,11 +29,11 @@ gh auth setup-git
 echo.
 echo [3/3] Pushing to GitHub (main branch)...
 git remote remove origin >nul 2>&1
-git remote add origin https://github.com/shahjaineel850-lgtm/aurora-academic-platform.git
+git remote add origin https://github.com/shahjaineel850-lgtm/IntelliCampus2.0.git
 git push -u origin main
 
 echo.
 echo ===========================================================================
-echo Done! Visit: https://github.com/shahjaineel850-lgtm/aurora-academic-platform
+echo Done! Visit: https://github.com/shahjaineel850-lgtm/IntelliCampus2.0
 echo ===========================================================================
 pause
