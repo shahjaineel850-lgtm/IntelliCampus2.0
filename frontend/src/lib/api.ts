@@ -12,7 +12,7 @@ import type {
   AttendanceStats,
 } from './types';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:8000/api/v1';
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? '/api/v1';
 
 export class ApiError extends Error {
   constructor(
@@ -55,7 +55,7 @@ export async function apiRequest<T>(path: string, init: RequestInit = {}): Promi
       headers,
     });
   } catch {
-    throw new ApiError(0, 'The backend API is unavailable. Check if the server is running on port 8000.', 'OFFLINE');
+    throw new ApiError(0, 'The backend API is unavailable. Check if the server is running.', 'OFFLINE');
   }
 
   if (!response.ok) {
@@ -324,3 +324,4 @@ export async function patchAttendance(
 export async function getAttendanceSummary(): Promise<AttendanceStats> {
   return apiRequest<AttendanceStats>('/attendance/summary');
 }
+
